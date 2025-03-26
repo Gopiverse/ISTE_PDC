@@ -1,6 +1,4 @@
-/*Updated */
-
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -23,6 +21,7 @@ html {
     font-size: 60%;
     overflow-z: hidden;
 }
+
 body {
     background: var(--bg-color);
     color: var(--text-color);
@@ -81,6 +80,7 @@ section {
     padding: 10rem 12% 10rem;
 }
 
+@media only screen and (min-width: 600px) {
 .home {
     display: flex;
     align-items: center;
@@ -95,6 +95,7 @@ section {
     text-align: left;
     justify-content: center;
     margin-top: 3rem;
+}
 }
 
 span {
