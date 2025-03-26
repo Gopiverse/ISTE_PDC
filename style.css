@@ -1,0 +1,296 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: nonw;
+    outline: none;
+    scroll-behaviour: smooth;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --bg-color: #04012e;
+    --second-bg-color: #131313;
+    --text-color: white;
+    --main-color: #1bd3f7;
+    cursor: none;
+}
+
+html {
+    font-size: 60%;
+    overflow-z: hidden;
+}
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 4rem 12% 4rem;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5; 
+}
+
+.logo {
+    font-size: 3rem;
+    color: var(--text-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.logo span {
+    text-shadow: 0 0 25px var(--main-color);
+}
+.navbar a{
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.navbar a:hover,
+.navbar a:active {
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+}
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--main-color);
+    display: none;
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 12% 10rem;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15rem;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    text-align: left;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+span {
+    color: var(--main-color);
+}
+
+.logo span {
+    color: var(--main-color);
+}
+.home-content h3 {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    font-size: 3.5rem;
+}
+.home-content h1 {
+    font-size: 7rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    line-height: 1;
+}
+
+.home-img {
+    border-radius: 50%;
+}
+
+.home-img img {
+    position: relative;
+    top: 3rem;
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--main-color);
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+} 
+
+.home-img img:hover {
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color),
+                0 0 100px var(--main-color);
+}
+
+.home-content p{
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.8;
+    max-width: 1000px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    font-size: 2.5rem;
+    border-radius: 50%;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    color: var(--text-color);
+    transform: scale(1.3)translateY(-5px);
+    box-shadow: 0 0 25px var(--main-color);
+    background-color: var(--main-color);
+}
+
+.cursor {
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    background: rgba(0, 200, 255, 0.8);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: transform 0.1s ease-out;
+    mix-blend-mode: difference;
+} 
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+    border-radius:  rem;
+    font-size: 1.6rem;
+    color: black;
+    border: 2px solid transparent;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.btn-hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px var(--main-color);
+}
+
+.btn-group {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+/*
+#custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background-color: #1bd3f7; 
+    border-radius: 50%; 
+    pointer-events: none; 
+    z-index: 1000; 
+}
+*/
+
+
+
+.circle {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, rgba(0, 140, 255, 1) 10%, rgba(0, 80, 200, 0.8) 40%, rgba(0, 40, 150, 0.6) 70%, rgba(0, 0, 100, 0.3) 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 140, 255, 0.8), 0 0 40px rgba(0, 80, 255, 0.6), 0 0 60px rgba(0, 60, 200, 0.4);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.08s linear;
+}
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    z-index: 999999999999;
+    opacity: 1;
+    transition: opacity 150s ease, visibility 7.99s ease;
+    visibility: visible;
+}
+    
+#preloader img {
+    width: 423px; /* Adjust width as desired */
+    height: 700px; /* Adjust height as desired */
+}
+/* Hide Content until Loaded */
+#content {
+    display: none;
+}
+
+@keyframes floatText {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-13px); } /* Moves up */
+    100% { transform: translateY(0px); } /* Moves back */
+}
+
+.home-content h1, 
+.home-content h3, 
+.home-content p, 
+.social-icons, 
+.btn-group {
+    animation: floatText 3s ease-in-out infinite; /* Floating effect */
+}
+
+
+.text-animation {
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.text-animation span {
+    position: relative;
+}
+
+.text-animation span::before {
+    content: "Consulting Detective";
+    color: var(--main-color);
+    animation: words 20s infinite;
+}
+
+.text-animation span::after {
+    content: "";
+    background-color: var(--bg-color);
+    position: absolute;
+    width: calc(100% -7px);
+    height: 100%;
+    border-left: 3px solid var(--bg-color);
+    right: -7px;
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+}
+
+
