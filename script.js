@@ -78,6 +78,33 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+let menuIcon = document.querySelector("#menu-icon");
+let navbar = document.querySelector(".navbar");
+
+// Ensure navbar  hidden initially
+window.onload = () => {
+    if (window.innerWidth < 895) {
+        navbar.classList.remove("active");
+    }
+};
+
+// Toggle navbar when clicking the hamburger
+menuIcon.addEventListener("click", () => {
+    navbar.classList.toggle("active");
+    menuIcon.classList.toggle("bx-x");
+});
+
+// Hide navbar when clicking outside (optional)
+document.addEventListener("click", (event) => {
+    if (!menuIcon.contains(event.target) && !navbar.contains(event.target)) {
+        navbar.classList.remove("active");
+        menuIcon.classList.remove("bx-x");
+    }
+});
+
+
+
+
 
 
 

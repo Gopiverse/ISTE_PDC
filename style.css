@@ -7,14 +7,14 @@
     outline: none;
     scroll-behaviour: smooth;
     font-family: "Poppins", sans-serif;
-}
+    box-sizing: border-box;}
 
 :root {
     --bg-color: #04012e;
     --second-bg-color: #04012e;
     --text-color: white;
     --main-color: #1bd3f7;
-    cursor: none;
+    /* cursor: none; */
 }
 
 html {
@@ -26,6 +26,8 @@ body {
     background: var(--bg-color);
     color: var(--text-color);
 }
+
+/* Website header */
 .header {
     position: fixed;
     top: 0;
@@ -38,8 +40,10 @@ body {
     justify-content: space-between;
     align-items: center;
     z-index: 5; 
+    cursor: pointer;
 }
 
+/* Sherlock Holmes logo */
 .logo {
     font-size: 3.4rem;
     color: var(--text-color);
@@ -55,6 +59,9 @@ body {
 .logo span {
     text-shadow: 0 0 25px var(--main-color);
 }
+
+
+/* Navigation */
 .navbar a{
     font-size: 1.8rem;
     color: var(--text-color);
@@ -80,23 +87,23 @@ section {
     padding: 10rem 12% 10rem;
 }
 
-@media only screen and (min-width: 600px) {
-.home {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15rem;
-}
 
-.home-content {
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    text-align: left;
-    justify-content: center;
-    margin-top: 3rem;
-}
-}
+    .home {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15rem;
+    }
+
+    .home-content {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        text-align: left;
+        justify-content: center;
+        margin-top: 3rem;
+    }
+
 
 span {
     color: var(--main-color);
@@ -169,7 +176,7 @@ span {
 .cursor {
     width: 0px;
     height: 0px;
-    border-radius: 50%;
+    border-radius: 80%;
     background: rgba(0, 200, 255, 0.8);
     position: absolute;
     transform: translate(-50%, -50%);
@@ -216,14 +223,13 @@ span {
 */
 
 
-
 .circle {
     position: fixed;
-    width: 20px;
-    height: 20px;
-    background: radial-gradient(circle, rgba(0, 140, 255, 1) 10%, rgba(0, 80, 200, 0.8) 40%, rgba(0, 40, 150, 0.6) 70%, rgba(0, 0, 100, 0.3) 100%);
-    border-radius: 50%;
-    box-shadow: 0 0 20px rgba(0, 140, 255, 0.8), 0 0 40px rgba(0, 80, 255, 0.6), 0 0 60px rgba(0, 60, 200, 0.4);
+    width: 25px;
+    height: 25px;
+    background: radial-gradient(circle, rgb(60, 156, 235) 10%, rgba(0, 80, 200, 0.8) 40%, rgba(0, 40, 150, 0.6) 70%, rgba(0, 0, 100, 0.3) 100%);
+    border-radius: 80%;
+    box-shadow: 0 0 40px rgba(2, 101, 182, 0.8), 0 0 10px rgba(62, 116, 235, 0.6), 0 0 60px rgba(0, 60, 200, 0.4);
     pointer-events: none;
     transform: translate(-50%, -50%);
     transition: transform 0.08s linear;
@@ -345,7 +351,7 @@ span {
     line-height: 22px;
 }
 
-@media only screen and (min-width: 600px) {
+/* @media only screen and (min-width: 600px) { */
 
 .cases {
     background: var(--bg-color);
@@ -371,6 +377,7 @@ span {
     border: 5px solid transparent;
     cursor: pointer;
     transition: 0;
+    margin-bottom: 2rem;
 }
 
 .case-box:hover {
@@ -403,7 +410,7 @@ span {
     line-height: 1.7;
     margin: auto;
 }
-}
+
 
 
 .testimonials {
@@ -524,5 +531,96 @@ span {
 
 .contact-details a:hover {
     color: var(--main-color);
+}
+
+
+@media (max-width: 895px) {
+    #menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 50%;
+        padding: 1rem 3%;
+        background: rgba(0, 0, 0, 0.8);
+        flex-direction: column; /* Fixed row issue */
+        backdrop-filter: blur(20px);
+        border-bottom-left-radius: 2rem;
+        border-left: 2px solid var(--main-color);
+        border-bottom: 2px solid var(--main-color);
+        display: none; /* Ensures it's hidden initially */
+        z-index: 1000;
+    }
+
+    /* Fix incorrect selector */
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        color: white;
+    }
+
+
+
+    .home {
+        flex-direction: column-reverse;
+        margin: 5rem 4rem;
+    }
+
+    .home-content h3{
+        font-size: 2.6rem;
+    }
+
+    .home-content h1 {
+        font-size: 8rem;
+        margin-top: 3rem;
+    }
+
+    .home-content p{
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .home-img img{
+        width: 56vw;
+    }
+
+    .cases h2 {
+        margin-bottom: 3rem;
+    }
+
+    .cases-container {
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+
+@media (max-width: 895px) {
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr); /*reduce to 2 cols */
+    }
+
+    .cases-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .case-box {
+        margin-bottom: 4rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .wrapper {
+        grid-template-columns: 1fr; /* reduce to 1 col */
+    }
 }
 
