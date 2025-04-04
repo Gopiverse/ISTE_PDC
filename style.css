@@ -210,17 +210,6 @@ span {
     align-items: center;
     gap: 1.5rem;
 }
-/*
-#custom-cursor {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    background-color: #1bd3f7; 
-    border-radius: 50%; 
-    pointer-events: none; 
-    z-index: 1000; 
-}
-*/
 
 
 .circle {
@@ -286,7 +275,7 @@ span {
 }
 
 .text-animation span::before {
-    content: "Consulting Detective";
+    /* content: "Consulting Detective"; */
     color: var(--main-color);
     animation: words 20s infinite;
 }
@@ -534,7 +523,7 @@ span {
 }
 
 
-@media (max-width: 895px) {
+@media (max-width: 1090px) {
     #menu-icon {
         display: block;
         cursor: pointer;
