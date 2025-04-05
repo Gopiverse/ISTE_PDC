@@ -3,9 +3,10 @@ document.getElementById("edit-form").addEventListener("submit", function (e) {
   
     // Get input values
     const h1Text = document.getElementById("h1Text").value.trim() || "Hi, Its <span>Sherlock</span>";
-    const h3Text = document.getElementById("h3Text").value.trim() || "";
+    const h3Text = document.getElementById("h3Text").value.trim() || "a Consulting";
     const para1 = document.getElementById("para1").value.trim() || "🕵️‍♂️ Welcome to <b>221B Baker Street</b>...";
     const para2 = document.getElementById("para2").value.trim() || "If you have a case that needs solving...";
+    const methodsHeading = document.getElementById("methodsHeading").value.trim() || "Methods & Deduction";
     const heading1 = document.getElementById("heading1").value.trim() || "The Science ..";
     const heading2 = document.getElementById("heading2").value.trim() || " Observation & A ";
     const heading3 = document.getElementById("heading3").value.trim() || " Forensic Experime... ";
@@ -49,11 +50,11 @@ document.getElementById("edit-form").addEventListener("submit", function (e) {
 
     <!-- Circles for the Trail Effect -->
     <div class="trail-container">
-  
-      <section class="home" id="home">
-          <div class="home-content">
-              <h1>${h1Text}</h1>
-              <h3 class="text-animation">a <span>${h3Text}</span></h3>
+    <section class="home" id="home">
+        
+        <div class="home-content">
+              <h1>Hii its ${h1Text}</h1>
+              <h3 class="text-animation">a <span></span>${h3Text}</h3>
               <p>${para1}</p>
               <p>${para2}</p>
   
@@ -73,21 +74,21 @@ document.getElementById("edit-form").addEventListener("submit", function (e) {
     </section>
         
         <section class="methods" id="methods">
-            <h2 class="heading">${methods-heading}</h2>
+            <h2 class="heading">${methodsHeading}</h2>
             <div class="methods-container">
                 <div class="method-item">
                     <h3>${heading1}</h3>
-                    <p>${h-para1}</p>
+                    <p>${hpara1}</p>
                 </div>
 
                 <div class="method-item">
                     <h3>${heading2}</h3>
-                    <p>${h-para2}</p>
+                    <p>${hpara2}</p>
                 </div>
 
                 <div class="method-item">
                     <h3>${heading3}</h3>
-                    <p>${h-para3}</p>
+                    <p>${hpara3}</p>
                 </div>
             </div>
         </section>
@@ -162,7 +163,7 @@ document.getElementById("edit-form").addEventListener("submit", function (e) {
                         <img src="images/4.jpg" alt="">
                         <h2>Irene Adler </h2>
                         <div class="rating"></div>
-                        <p>He is a remarkable man, though I do wonder if he’s capable of human emotion.</p>
+                        <p>He's a remarkable man, though I do wonder if he's capable of human emotion.</p>
                     </div>
 
                     <div class="testimonial-item">
@@ -203,16 +204,19 @@ document.getElementById("edit-form").addEventListener("submit", function (e) {
 
 
         
-        
+
     <script src="script.js"></script>
+    <button id="mute-toggle" class="mute-button">🔊</button>
+
 </body>
     `;
-  
-    // Create and download updated file
-    const blob = new Blob([htmlContent], { type: "text/html" });
-    const a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = "updated_sherlock.html";
-    a.click();
-  });
+    
+  console.log(htmlContent)
+      // Create and download updated file
+  const blob = new Blob([htmlContent], { type: "text/html" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "updated_sherlock.html";
+  a.click();
+});
   

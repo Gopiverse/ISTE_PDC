@@ -330,7 +330,7 @@ section {
 .cases {
     background: var(--bg-color);
     color: black;
-    padding: 5rem 2rem; /* Added horizontal padding */
+    padding: 5rem 2rem; 
 }
 
 .cases h2 {
