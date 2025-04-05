@@ -82,13 +82,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const bgMusic = new Audio("sounds/background.mp3");
     bgMusic.loop = true;
 
+    const muteToggle = document.getElementById("mute-toggle");
+
     function startMusicOnce() {
         bgMusic.play();
         document.removeEventListener("click", startMusicOnce);
     }
-
     document.addEventListener("click", startMusicOnce);
+
+    muteToggle.addEventListener("click", function () {
+        if (bgMusic.muted) {
+            bgMusic.muted = false;
+            muteToggle.textContent = "🔊";
+        } else {
+            bgMusic.muted = true;
+            muteToggle.textContent = "🔇";
+        }
+    });
 });
+
 
 // Responsive navbar toggle
 const menuIcon = document.querySelector("#menu-icon");

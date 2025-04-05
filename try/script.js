@@ -1,4 +1,22 @@
-<!DOCTYPE html>
+document.getElementById("edit-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+  
+    // Get input values
+    const h1Text = document.getElementById("h1Text").value.trim() || "Hi, Its <span>Sherlock</span>";
+    const h3Text = document.getElementById("h3Text").value.trim() || "";
+    const para1 = document.getElementById("para1").value.trim() || "🕵️‍♂️ Welcome to <b>221B Baker Street</b>...";
+    const para2 = document.getElementById("para2").value.trim() || "If you have a case that needs solving...";
+    const heading1 = document.getElementById("heading1").value.trim() || "The Science ..";
+    const heading2 = document.getElementById("heading2").value.trim() || " Observation & A ";
+    const heading3 = document.getElementById("heading3").value.trim() || " Forensic Experime... ";
+    const hpara1 = document.getElementById("hpara1").value.trim() || " When you have eli";
+    const hpara2 = document.getElementById("hpara2").value.trim() || " The world is ";
+    const hpara3 = document.getElementById("hpara3").value.trim() || " I never guess. ";
+
+
+
+    // Full HTML structure (unchanged except for updated content)
+    const htmlContent = `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -31,16 +49,15 @@
 
     <!-- Circles for the Trail Effect -->
     <div class="trail-container">
-    <section class="home" id="home">
-        
-        <div class="home-content">
-            <h1>Hi, Its <span>Sherlock</span></h1>
-            <h3 class="text-animation">a <span></span>Consulting Detective</h3>
-            <p>🕵️‍♂️ Welcome to <b>221B Baker Street</b>, where logic and deduction solve the unsolvable. With the keenest eye for detail and an unshakable belief in reason, I take on cases that defy explanation.</p>
-            <p>If you have a case that needs solving, explore my records, study my methods, or send a telegram. The game is afoot!</p>
-            
-
-            <div class="social-icons">
+  
+      <section class="home" id="home">
+          <div class="home-content">
+              <h1>${h1Text}</h1>
+              <h3 class="text-animation">a <span>${h3Text}</span></h3>
+              <p>${para1}</p>
+              <p>${para2}</p>
+  
+               <div class="social-icons">
                 <a href="https://t.me/SH_221Bbot"><i class='bx bxl-telegram'></i></a>
             </div>
 
@@ -56,21 +73,21 @@
     </section>
         
         <section class="methods" id="methods">
-            <h2 class="heading">Methods & Deduction</h2>
+            <h2 class="heading">${methods-heading}</h2>
             <div class="methods-container">
                 <div class="method-item">
-                    <h3>🔍 The Science of Deduction</h3>
-                    <p>When you have eliminated the impossible, whatever remains, however improbable, must be the truth.</p>
+                    <h3>${heading1}</h3>
+                    <p>${h-para1}</p>
                 </div>
 
                 <div class="method-item">
-                    <h3>🕵️‍♂️ Observation & Analysis</h3>
-                    <p>The world is full of obvious things which nobody by any chance ever observes.</p>
+                    <h3>${heading2}</h3>
+                    <p>${h-para2}</p>
                 </div>
 
                 <div class="method-item">
-                    <h3>🧪 Forensic Experiments</h3>
-                    <p>I never guess. It is a shocking habit—destructive to the logical faculty.</p>
+                    <h3>${heading3}</h3>
+                    <p>${h-para3}</p>
                 </div>
             </div>
         </section>
@@ -145,7 +162,7 @@
                         <img src="images/4.jpg" alt="">
                         <h2>Irene Adler </h2>
                         <div class="rating"></div>
-                        <p>He’s a remarkable man, though I do wonder if he’s capable of human emotion.</p>
+                        <p>He is a remarkable man, though I do wonder if he’s capable of human emotion.</p>
                     </div>
 
                     <div class="testimonial-item">
@@ -186,9 +203,16 @@
 
 
         
-
+        
     <script src="script.js"></script>
-    <button id="mute-toggle" class="mute-button">🔊</button>
-
 </body>
-    
+    `;
+  
+    // Create and download updated file
+    const blob = new Blob([htmlContent], { type: "text/html" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "updated_sherlock.html";
+    a.click();
+  });
+  
